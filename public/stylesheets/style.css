@@ -1,0 +1,65 @@
+body{
+	background-color: #383838;
+	color:white;
+	font-family: "Copperplate Gothic";
+}
+
+main {
+	margin-bottom: 3%;
+}
+
+header h1{
+	color: #CC0000;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 300%;
+	margin-left: 15px;
+	margin-top: 65px;
+	background-color: #181818;
+}
+
+nav ul {
+	list-style-type: none;
+	margin-top: 65px;
+	text-align: center;
+    background-color: #181818;
+}
+
+nav ul li {
+	font-size: 150%;
+	display: inline-block;
+	padding: 50px 30px;
+}
+
+nav ul li:hover {
+	background-color: #CC0000;
+	cursor: pointer;
+}
+
+section section{
+	margin-top: 25px;
+	margin-right: 2%;
+	float: right;
+	width: 78%;
+}
+
+p {
+	text-align: justify;
+}
+
+aside {
+	float: left;
+	width: 15%;
+	margin-left: 1%;
+	margin-bottom: 50px;
+}
+
+aside a {
+	text-decoration: underline;
+	color: #CC0000;
+}
+
+footer {
+	clear: both;
+	margin-left: 3%;
+}

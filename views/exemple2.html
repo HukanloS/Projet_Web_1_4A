@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Titre de la page</title>
+  </head>
+  <body>
+    <div id="app">
+      <nav>
+        <ul>
+          <li v-bind:class="{ 'current': currentPage === 'accueil' }"
+            v-on:click="currentPage = 'accueil'">
+            Accueil
+          </li>
+          <li v-bind:class="{ 'current': currentPage === 'quisommesnous' }"
+            v-on:click="currentPage = 'quisommesnous'">
+            Qui sommes-nous ?
+          </li>
+        </ul>
+      </nav>
+      <section v-if="currentPage === 'accueil'" id="accueil">
+        <h1>Ceci est la page d'accueil</h1>
+        <article>
+          Ceci est un article 
+          <strong>avec du texte particulièrement important</strong>
+        </article>
+        <article>
+          Ceci est un article
+        </article>
+        <article>
+          Ceci est un article
+        </article>
+      </section>
+      <section v-else-if="currentPage === 'quisommesnous'" id="quisommesnous">
+        <h1>Ceci est la page Qui sommes-nous ?</h1>
+        <p>Réponse: les développeurs de l'ombre</p>
+      </section>
+      <section v-else>
+        Aucune page sélectionnée :/
+      </section>
+      <ul>
+        <li v-for="item in myList"> {{ item.name }} </li>
+      </ul>
+      <input type="text" v-model="newItem">
+      <button v-on:click="addItem()">Ajouter !</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+const app = new Vue({
+  el: '#app',
+  data: {
+    currentPage: 'accueil',
+    newItem: '',
+    myList: [{
+      name: 'Item 1'
+    }, {
+      name: 'Item 2'
+    }, {
+      name: 'Item 3'
+    }, {
+      name: 'Item 4'
+    }]
+  },
+  methods: {
+    addItem () {
+      const newObj = {
+        name: this.newItem
+      }
+      this.myList.push(newObj)
+      this.myItem = ''
+    }
+  }
+})
+
+  </script>
+  </body>
+</html>

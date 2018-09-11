@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Clinique St Giscard du Destin - Accueil</title>
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+  </head>
+
+  <body>
+    <!-- Voici notre en‑tête principale utilisée dans toutes les pages
+         de notre site web -->
+
+    <header>
+      <h1>La clinique St Giscard du Destin</h1>
+    </header>
+    <main id="app">
+    <nav>
+      <ul>
+        <li v-on:click="currentPage = 'Accueil'" id="Accueil">Accueil</li>
+        <li v-on:click="currentPage = 'Rendez-vous'" id="Rendez-vous">Rendez-vous</li>
+        <li v-on:click="currentPage = 'Communauté'">Communauté</li>
+        <li v-on:click="currentPage = 'EnSavoirPlus'" id="EnSavoirPlus">En savoir plus</li>
+      </ul>
+     </nav>
+
+      <section v-if="currentPage === 'Accueil'" id="Accueil">
+      <hr>
+      <!-- Il contient un article -->
+      <article>
+        <h2>En-tête d'article</h2>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam lectus. Set sit amet ipsum mauris. Maecenas congue ligula as quam viverra nec consectetur ant hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</p>
+
+        <h3>Sous‑section</h3>
+
+        <p>Donec ut librero sed accu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.</p>
+
+        <p>Pelientesque auctor nisi id magna consequat sagittis. Curabitur dapibus, enim sit amet elit pharetra tincidunt feugiat nist imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros.</p>
+
+        <h3>Autre sous‑section</h3>
+
+        <p>Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum soclis natoque penatibus et manis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+
+        <p>Vivamus fermentum semper porta. Nunc diam velit, adipscing ut tristique vitae sagittis vel odio. Maecenas convallis ullamcorper ultricied. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, is fringille sem nunc vet mi.</p>
+
+        <p>Il y avait une fois une fille nommée Nell<br>
+		Qui aimait écrire du HTML<br>
+		Mais ses structures et sémantiques affligeantes<br>
+		rendaient de ses marquages la lecture inélégante.</p>
+
+		<p>Ron était acculé dans un angle par des Netherbeasts en maraude. Effrayé, mais déterminé à protéger ses amis, il a levé sa baguette et s'est préparé à se battre, espérant que son appel de détresse serait entendu.</p>
+		<hr>
+		<p>Pendant ce temps, Harry était assis à la maison, regardant sa déclaration de redevances et réfléchissant à la sortie du prochaine épisode de la fiction, quand une lettre de détresse enchantée passa par sa fenêtre et atterrit sur ses genoux. Il la lut à la hâte et, se dressant brusquement, « mieux vaut retourner au travail alors » se dit-il.</p>
+      </article>
+    </section>
+
+    <section v-else-if="currentPage === 'Rendez-vous'" id="Rendez-vous">
+      <hr>
+      <h4>Vous avez pris rendez-vous pour :</h4>
+      <ul>
+        <li v-for="item in myList"> {{ item.name }} le {{ item.jour }} {{ item.mois }} {{ item.année }} à {{ item.heure }}</li>
+      </ul>
+      <br>
+      <h4>Prenez rendez-vous dès maintenant avec nos spécialistes. Veuillez indiquer ci-dessous la nature de votre consultation.</h4>
+      <select v-model="name">
+        <option value="Demande de certificat">Demande de certificat médical</option>
+        <option value="Opération chirurgicale">Opération chirurgicale</option>
+        <option value="Massage thaï">Massage thaï</option>
+        <option value="Coiffure sur-mesure (Serieux!?)">Coiffure sur-mesure</option>
+        <option value="Don d'organe(s)">Don d'organe(s)</option>
+        <option value="Injection létale">Injection létale</option>
+        <option value="Injection létale gratuite">Inspection sanitaire</option>
+        <option value="Recherche d'emploi">Recherche d'emploi</option>
+      </select>
+      <br>
+      <h4>Sélectionnez le jour</h4>
+      <input type="number" name="jour" maxlength="2" min="1" max="31" v-model="jour" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+      <br>
+      <h4>Sélectionnez le mois</h4>
+      <select v-model="mois">
+        <option value="Janvier">Janvier</option>
+        <option value="Février">Février</option>
+        <option value="Mars">Mars</option>
+        <option value="Avril">Avril</option>
+        <option value="Mai">Mai</option>
+        <option value="Juin">Juin</option>
+        <option value="Juillet">Juillet</option>
+        <option value="Août">Août</option>
+        <option value="Septembre">Septembre</option>
+        <option value="Octobre">Octobre</option>
+        <option value="Novembre">Novembre</option>
+        <option value="Décembre">Décembre</option>
+      </select>
+      <br>
+      <h4>Selectionnez l'année (tout rendez-vous pris moins de 5 mois à l'avance ne seront pas pris en compte et ne seront pas non plus remboursés par la Sécurité Sociale) :</h4>
+      <input type="number" name="année" min="2019" max="2119" v-model="année">
+      <br>
+      <h4>Selectionnez l'horraire</h4>
+      <select v-model="heure">
+        <option value="10h00">10h00</option>
+        <option value="10h45">10h45</option>
+        <option value="11h30">11h30</option>
+        <option value="12h15">12h15</option>
+        <option value="14h00">14h00</option>
+        <option value="14h45">14h45</option>
+        <option value="15h30">15h30</option>
+        <option value="16h15">16h15</option>
+        <option value="17h00">17h00</option>
+        <option value="17h45">17h45</option>
+        <option value="18h30">18h30</option>
+        <option value="19h15">19h15</option>
+      </select>
+      <br>
+      <br>
+      <br>
+
+      <button v-on:click="addItem()">Confirmer</button>
+
+    </section>
+
+    <section v-else-if="currentPage === 'Communauté'" id="Communauté">
+      <hr>
+      <p>Work in Progress</p>
+    </section>
+
+    <section v-else-if="currentPage === 'EnSavoirPlus'" id="EnSavoirPlus">
+      <hr>
+      <h4>Vous avez cliqué ici car vous voulez en savoir plus sur notre travail ? C'est bien naturel ; après tout, la clinique St. Giscard du Destin, c'est surtout : </h4>
+      <br>
+        <section>
+          
+        </section>
+    </section>
+
+    <section v-else-if="currentPage === 'Inscription'" id="Inscription">
+      <hr>
+      <h2>Veuillez remplir les champs ci-dessous. Un compte sur ce site vous permettra d'accèder au service d</h2>
+    </section>
+    
+<!--
+
+    <section v-else-if="currentPage === 'Date'" id="Date">
+      <hr>
+      <p>Prenez rendez-vous dès maintenant avec nos spécialistes. Veuillez indiquer ci-dessous la nature de votre consultation.</p>
+      <p>Vous avez selectionné le service : {{ selected }}</p>
+      <p>Choisissez une date (le jour où cette option sera disponible)</p>
+    </section>
+
+-->
+
+      <!-- Le contenu « à côté » peut aussi être intégré dans le contenu
+           principal -->
+
+      <aside>
+        <br>
+        <h2>Connectez-vous !</h2>
+
+        <!-- Un formulaire de recherche est une autre façon de naviguer de
+            façon non‑linéaire dans un site. -->
+
+       <form>
+         <input type="ID" name="q" placeholder="Identifiant">
+         <input type="ID" name="q" placeholder="MdP">
+         <input type="submit" value="Se connecter">
+       </form>
+
+        <br>
+        <a href="https://www.youtube.com/watch?v=G1IbRujko-A&t=2s">Mot de passe oublié</a><br>
+        <a v-on:click="currentPage = 'Inscription'">S'inscrire</a>
+        
+      </aside>
+
+    </main>
+
+    <!-- Et voici notre pied de page utilisé sur toutes les pages du site -->
+
+    <footer>
+      <p>©Copyright 2018 par Vergues Enterprise. Tous droits reversés.</p>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"></script>
+  <script src="javascripts/Clinique2.js"></script>
+
+
+  </body>
+</html>
