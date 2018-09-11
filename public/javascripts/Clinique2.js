@@ -45,7 +45,7 @@ const app = new Vue ({
         heure: this.heure
       })
       .then(() => {
-        this.myList.push({
+        this.myUsers.myList.push({
           name: this.name,
           année: this.année,
           mois: this.mois,
