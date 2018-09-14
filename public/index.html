@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
   <head>
     <meta charset="utf-8">
-
     <title>Clinique St Giscard du Destin - Site officiel</title>
     <link rel="stylesheet" href="stylesheets/style.css">
   </head>
 
   <body>
-    <!-- Voici notre en‑tête principale utilisée dans toutes les pages
-         de notre site web -->
-
     <header>
       <h1>La clinique St Giscard du Destin</h1>
     </header>
@@ -18,42 +15,44 @@
     <nav>
       <ul>
         <li v-on:click="currentPage = 'Accueil'" id="Accueil">Accueil</li>
-        <li v-on:click="currentPage = 'Rendez-vous'" id="Rendez-vous">Rendez-vous</li>
+        <li v-if="currentAside === 'FDéconnecté'" v-on:click="currentPage = 'Rendez-vous D'" id="Rendez-vous DF">Rendez-vous</li>
+        <li v-else-if="currentAside === 'Déconnecté'" v-on:click="currentPage = 'Rendez-vous D'" id="Rendez-vous D">Rendez-vous</li>
+        <li v-else-if="currentAside === 'Connecté'" v-on:click="currentPage = 'Rendez-vous'" id="Rendez-vous">Rendez-vous</li>
         <li v-on:click="currentPage = 'Communauté'">Communauté</li>
         <li v-on:click="currentPage = 'EnSavoirPlus'" id="EnSavoirPlus">En savoir plus</li>
       </ul>
      </nav>
 
      <section>
-
       <section v-if="currentPage === 'Accueil'" id="Accueil">
       <hr>
-      <!-- Il contient un article -->
       <article>
-        <h2>En-tête d'article</h2>
+        <h2>Bienvenue à vous!</h2>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam lectus. Set sit amet ipsum mauris. Maecenas congue ligula as quam viverra nec consectetur ant hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</p>
+        <p>Toute l'équipe de la célèbre Clinique Saint-Giscard du Destin est fière de vous présenter son tout nouveau site officiel. Vous pourrez désormais plannifier à l'avance vos rendez-vous dans notre établissement en quelques clics tout en étant confortablement installé dans votre chaise de bureau!</p>
 
-        <h3>Sous‑section</h3>
+        <h3>Saviez-vous qu'il était possible de prendre des rendez-vous chez nous un siècle en avance?</h3>
 
-        <p>Donec ut librero sed accu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.</p>
+        <p>Et oui vous ne rêvez pas! Mais avant de vous pincer, saviez-vous aussi que vous pouviez prendre plusieurs rendez-vous en même temps? Mais aussi, aux exactes mêmes horraires? Incroyable n'est-ce pas? C'est pas sur Doctolib qu'on verrait ça!</p>
 
-        <p>Pelientesque auctor nisi id magna consequat sagittis. Curabitur dapibus, enim sit amet elit pharetra tincidunt feugiat nist imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros.</p>
+        <p>Mais comment prendre rendez-vous? Ne vous inquiètez pas, c'est un jeu d'enfants. Il vous suffit de vous inscrire en cliquant sur le lien dans la barre latérale à gauche. Vous accederez ainsi directement au formulaire d'inscription. Remplissez ensuite les champs avec vos identifiants usuels (Il est extrêmement conseillé d'utiliser les mêmes que sur votre compte bancaire). Pas besoin d'adresse mail, de numéro de téléphone ou de code captcha laborieux ; nos spécialistes s'occupent de tout.</p>
 
-        <h3>Autre sous‑section</h3>
+        <p>Et voilà! Vous n'avez plus qu'à vous connecter et ainsi bénéficier de nos services! D'ailleurs si vous êtes satisfait(e) de ceux-cis, n'hésitez pas à parler de nous autour de vous!</p>
 
-        <p>Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum soclis natoque penatibus et manis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+        <br>
+        <br>
+        <img src="http://www.arkadian.vg/wp-content/uploads/2013/09/primera.jpg" id="MainPics">
+        <h3 id="PicDesc">Nos locaux viennent tout juste d'être rénovés!</h3>
+        <br>
+        <br>
 
-        <p>Vivamus fermentum semper porta. Nunc diam velit, adipscing ut tristique vitae sagittis vel odio. Maecenas convallis ullamcorper ultricied. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, is fringille sem nunc vet mi.</p>
+        <h3>Plus de choix que n'importe où ailleurs!</h3>
 
-        <p>Il y avait une fois une fille nommée Nell<br>
-		Qui aimait écrire du HTML<br>
-		Mais ses structures et sémantiques affligeantes<br>
-		rendaient de ses marquages la lecture inélégante.</p>
+        <p>Le site officiel de la Clinique Saint-Giscard du Destin vous offre le choix entre de très nombreux types de rendez-vous. Une infinité de possibilités s'offre ainsi à vous! Alors, qu'attendez vous!? Nous avons hâte de pouvoir collaborer avec vous, pour notre plus grand plaisir de recourir au votre. Les coûts de nos services sont risibles par rapport à leur qualité, et de toutes façons, c'est bien à ça que servent la Sécurité Sociale et votre Mutuelle.</p>
 
-		<p>Ron était acculé dans un angle par des Netherbeasts en maraude. Effrayé, mais déterminé à protéger ses amis, il a levé sa baguette et s'est préparé à se battre, espérant que son appel de détresse serait entendu.</p>
-		<hr>
-		<p>Pendant ce temps, Harry était assis à la maison, regardant sa déclaration de redevances et réfléchissant à la sortie du prochaine épisode de la fiction, quand une lettre de détresse enchantée passa par sa fenêtre et atterrit sur ses genoux. Il la lut à la hâte et, se dressant brusquement, « mieux vaut retourner au travail alors » se dit-il.</p>
+        <p>Vous ne voulez manquer aucunes news? Vous serez bientôt comblés par notre expension sur le net, augmentant ainsi d'avantage la qualité de nos services. Cliquez sur le lien "Communauté" pour plus d'informations à ce sujet.</p>
+
+        <p>Comme vous l'avez sûrement remarqué, notre site a été créé sous la gouverne de valeurs humanistes. En effet, afin de respecter les valeurs humaines des volontaires prestataires ayant créé le site, celui-ci a été designé dans la simplicité et la sobriété, pour leur éviter tout type de surmenage superflux. Car oui, la Clinique Saint-Giscard du Destin est avant tout une grande famille. Rejoignez donc nos rangs pour participer à l'aventure! L'option est disponible dans la rubrique "Rendez-vous".</p>
       </article>
     </section>
 
@@ -65,14 +64,11 @@
       <hr>
       <h4>Vous avez pris rendez-vous pour :</h4>
       <ul>
-        <template v-for="item in myUsers">
-          <li v-for="sub in item.myList">
-          {{ sub.name }} le {{ sub.jour }} {{ sub.mois }} {{ sub.année }} à {{ sub.heure }}</li>
-        </template>
+        <li v-for="item in myList" v-if="item.numberuser == numberuser">{{ item.name }} le {{ item.jour }} {{ item.mois }} {{ item.année }} à {{ item.heure }}</li>
       </ul>
       <br>
       <h4>Prenez rendez-vous dès maintenant avec nos spécialistes. Veuillez indiquer ci-dessous la nature de votre consultation.</h4>
-      <select v-model="name">
+      <select v-model="name" required>
         <option value="Demande de certificat">Demande de certificat médical</option>
         <option value="Opération chirurgicale">Opération chirurgicale</option>
         <option value="Massage thaï">Massage thaï</option>
@@ -84,10 +80,10 @@
       </select>
       <br>
       <h4>Sélectionnez le jour</h4>
-      <input type="number" name="jour" maxlength="2" min="1" max="31" v-model="jour" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+      <input type="number" name="jour" maxlength="2" min="1" max="31" v-model="jour" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
       <br>
       <h4>Sélectionnez le mois</h4>
-      <select v-model="mois">
+      <select v-model="mois" required>
         <option value="Janvier">Janvier</option>
         <option value="Février">Février</option>
         <option value="Mars">Mars</option>
@@ -103,10 +99,10 @@
       </select>
       <br>
       <h4>Selectionnez l'année (tout rendez-vous pris moins de 5 mois à l'avance ne seront pas pris en compte et ne seront pas non plus remboursés par la Sécurité Sociale) :</h4>
-      <input type="number" name="année" min="2019" max="2119" v-model="année">
+      <input type="number" name="année" min="2019" max="2119" v-model="année" required>
       <br>
       <h4>Selectionnez l'horraire</h4>
-      <select v-model="heure">
+      <select v-model="heure" required>
         <option value="10h00">10h00</option>
         <option value="10h45">10h45</option>
         <option value="11h30">11h30</option>
@@ -130,16 +126,28 @@
 
     <section v-else-if="currentPage === 'Communauté'" id="Communauté">
       <hr>
-      <p>Work in Progress</p>
+      <h2>Rejoignez-nous bientôt sur nos réseaux sociaux!</h2>
+      <p>Il parrait que notre communauté grandit chaque jour! Pour cette raison, nous allons bientôt ouvrir des comptes sur de nombreuses pateformes afin de mieux pouvoir vous renseigner, ou même, que vous puissiez acceder à du contenu exclusif!</p>
+      <p>Bientôt, les liens ci-dessous vous permettrons d'accèder à toutes nos pages et nos chaînes. Rejoignez-nous donc pour ne rien manquer:</p>
+      <br>
+      <a href="https://fr-fr.facebook.com/"><img id="IconPic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png"></img></a>
+      <a href="https://media.giphy.com/media/ElErZGcXv1dpS/giphy.gif"><img id="IconPic" src="https://png.icons8.com/color/1600/twitter-squared.png"></img></a>
+      <a href="https://www.youtube.com/?gl=FR&hl=fr"><img id="IconPic" src="https://cdn1.iconfinder.com/data/icons/google_jfk_icons_by_carlosjj/512/youtube.png"></img></a>
+      <a href="https://www.instagram.com/"><img id="IconPic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/480px-Instagram_icon.png"></img></a>
+      <a href="https://fr.pornhub.com/view_video.php?viewkey=ph55b2ec08ad5b1"><img id="IconPic" src="https://cdn0.iconfinder.com/data/icons/popular-web-logos-button/140/1-06-3-512.png"></img></a>
     </section>
 
     <section v-else-if="currentPage === 'EnSavoirPlus'" id="EnSavoirPlus">
       <hr>
-      <h4>Vous avez cliqué ici car vous voulez en savoir plus sur notre travail ? C'est bien naturel ; après tout, la clinique St. Giscard du Destin, c'est surtout : </h4>
+      <h2>Vous avez cliqué ici car vous voulez en savoir plus sur notre travail ? C'est bien naturel ; après tout, la clinique St. Giscard du Destin, c'est surtout : </h2>
       <br>
         <section>
-          
+          <li id="Tag">plus de<br>3000<br>clients fidèles</li>
+          <li id="Tag">plus de<br>100%<br>de satisfaction</li>
+          <li id="Tag">plus de<br>100%<br>de médecine naturelle</li>
+          <li id="Tag">mais surtout<br>des valeurs<br>humaines</li>
         </section>
+      <br>
     </section>
 
     <section v-else-if="currentPage === 'Inscription'" id="Inscription">
@@ -147,9 +155,15 @@
       <h2>Veuillez remplir les champs ci-dessous. Un compte sur ce site vous permettra d'accèder aux divers services de notre établissement par prise de rendez-vous personnalisables :</h2>
       <br>
       <form action="#">
-        <input type="text" placeholder="Identifiant" v-model="identifiant">
+        <input type="text" placeholder="Identifiant" v-model="identifiant" required>
         <br>
-        <input type="password" placeholder="Mot de passe" v-model="mdp">
+        <br>
+        <input type="password" placeholder="Mot de passe" v-model="mdp" required>
+        <br>
+        <br>
+        <input type="checkbox" name="contrat" required> J'ai lu et j'accepte <a v-on:click="currentPage = 'Conditions'" id="CondiText">les conditions d'utilisations </a>de la Clinique St Giscard du destin (mais honnêtement vous avez mieux à faire de votre vie).
+        <br>
+        <br>
         <br>
         <input type="submit" value="Soumettre" v-on:click="addUser()">
       </form>
@@ -157,12 +171,21 @@
 
     <section v-else-if="currentPage === 'Conditions'" id="Conditions">
       <hr>
-      <h2>Vous voulez vraiment lire les conditions d'utilisation ? Vous avez sans doutes mieux à faire de votre précieux temps ; ne le gâchez pas, nous ne vivons qu'une fois après tout ! </h2>
+      <h4>Vous voulez vraiment lire les conditions d'utilisation ? Vous avez sans doutes mieux à faire de votre précieux temps ; ne le gâchez pas, nous ne vivons qu'une fois après tout ! </h4>
       <br>
-      <h2>...</h2>
+      <p>...</p>
       <br>
-      <h2>Toujours là ? Toute l'équipe vous assure que la qualité de nos services est irréprochable mais si vous doutez de notre bonne foi, nous ne pouvons que vous conseiller de lire ce document jusqu'au boût. Ainsi, en souscrivant à la création d'un compte, vous accèptez : </h2>
-      <p></p>
+      <h4>Toujours là ? Toute l'équipe vous assure que la qualité de nos services est irréprochable mais si vous doutez de notre bonne foi, nous ne pouvons que vous conseiller de lire ce document jusqu'au boût. Ainsi, en souscrivant à la création d'un compte, vous acceptez : </h4>
+      <br>
+      <p> - la récupération directe du paiement des services proposés directement sur votre compte bancaire dont nous avons récuperé les identifiants.</p>
+      <p> - la récupération des identifiants de votre compte bancaire (ne vous inquiétez pas, nul besoin de nous fournir quoi que ce soit, on s'occupe de tout). La fermeture de votre compte bancaire moins de six heures après la prise d'un rendez-vous sera considèrée comme une infraction auprès de l'article 111-2 du Code Pénal.</p>
+      <p> - la participation à la rémunération des factures d'électricité de la Clinique par un versement supplémentaire de 37€/mois prélevé directement sur votre compte.</p>
+      <p> - la facturation de chacun de nos services 1230€ (excepté les inspections sanitaires) même si ceux-cis sont malencontreusements annulés quelqu'en soit la cause. Les rendez-vous dont le remplissage des champs est incomplet ou incohérent (ex : 31 Février 1993) seront quand même facturés.</p>
+      <p> - la pénétration du personnel de la Clinique St Giscard du Destin dans votre lieu de vie pour y saisir tous vos biens ainsi que vos collocataires/membres de votre famille présents sur place à ce moment là.</p>
+      <p> - l'utilisation de produits toxiques/corrosifs/radioactifs sur votre corps durant votre rendez-vous.</p>
+      <p> - l'obligation de remplir le formulaire de satisfaction à la fin de chacun des rendez-vous.</p>
+      <p> - les actes de répression physique sur vos collocataires/les membres de votre famille refusant de nous suivre en cas de collecte caritative.</p>
+      <p> - la mise en scène de votre suicide lors de la non-acceptation totale ou partielle des conditions d'utilisation.</p>
     </section>  
 
     <section v-else-if="currentPage === 'Compte Créé'" id="Compte Créé">
@@ -171,20 +194,24 @@
     </section>  
 
   </section>
-    
 
       <aside>
+        <section v-if="currentAside === 'FDéconnecté'" id="FDéconnecté">
+          <br>  
+          <h2>Connectez-vous !</h2>  
+          <a v-on:click="currentAside = 'Déconnecté'">Se Connecter</a>
+          <br>   
+          <a v-on:click="currentPage = 'Inscription'">S'inscrire</a>
+        </section>
 
-        <section v-if="currentAside === 'Déconnecté'" id="Déconnecté">
+        <section v-else-if="currentAside === 'Déconnecté'" id="Déconnecté">
           <br>  
           <h2>Connectez-vous !</h2>
-
           <form action="#">
-            <input type="ID" name="q" placeholder="Identifiant">
-            <input type="ID" name="q" placeholder="Mot de passe">
-            <input type="submit" value="Se connecter"  v-on:click="currentAside = 'Connecté'">
+            <input type="text" v-model="identifiantC" name="q" placeholder="Identifiant" required>
+            <input type="password" v-model="mdpC" name="q" placeholder="Mot de passe" required>
+            <button value="Se connecter"  v-on:click=" connexion()">Se connecter</button>
           </form>
-
           <br>
           <a href="https://www.youtube.com/watch?v=G1IbRujko-A&t=2s">Mot de passe oublié</a>
           <br>   
@@ -193,20 +220,18 @@
 
         <section v-else-if="currentAside === 'Connecté'" id="Connecté">
           <br>
-          <h5>ID</h5>
+          <h2>Bonjour {{ identifiantC }}</h2>
           <br>
-          <a v-on:click="currentAside = 'Déconnecté'">Se déconnecter</a>
+          <a v-on:click="numberuser=-1, currentAside = 'Déconnecté'">Se déconnecter</a>
         </section>      
-       
       </aside>
-
     </main>
 
     <!-- Et voici notre pied de page utilisé sur toutes les pages du site -->
 
     <footer>
       <br>
-      <p>©Copyright 2018 par Vergues Enterprise. Tous droits reversés.</p>
+      <p>©Copyright 2018 par Seigneur Malemort Enterprise. Tous droits reversés.</p>
     </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
